@@ -10,10 +10,10 @@ import { RouterLink, RouterView } from 'vue-router'
           <RouterLink :to="{ name: 'home' }"> Home </RouterLink>
         </li>
         <li>
-          <RouterLink to="favorites">Favorites</RouterLink>
+          <RouterLink :to="{ name: 'favorites' }">Favorites</RouterLink>
         </li>
         <li>
-          <RouterLink to="add-recipe">Add Recipe</RouterLink>
+          <RouterLink :to="{ name: 'add-recipe' }">Add Recipe</RouterLink>
         </li>
       </ul>
     </nav>
