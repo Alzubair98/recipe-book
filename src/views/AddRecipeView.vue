@@ -17,13 +17,15 @@ import { ref } from 'vue'
 import { useRecipeStore } from '../stores/recipe'
 
 const store = useRecipeStore()
-
 const name = ref('')
 const description = ref('')
-
 const router = useRouter()
+
 const addRecipe = () => {
-  const recipe = store.addRecipe({ name: name.value, description: description.value })
+  const recipe = store.addRecipe({
+    name: name.value,
+    description: description.value,
+  })
   router.push({
     name: 'recipe',
     params: {

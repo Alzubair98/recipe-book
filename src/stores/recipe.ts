@@ -17,6 +17,7 @@ export const useRecipeStore = defineStore('recipe', () => {
       id: Date.now().toString(),
       ...recipe,
     }
+
     recipes.value.push(newRecipe)
     return newRecipe
   }
