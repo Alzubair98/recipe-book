@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-interface Recipe {
+export interface Recipe {
   id: string
   name: string
   description: string
