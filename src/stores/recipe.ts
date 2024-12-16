@@ -10,7 +10,12 @@ interface Recipe {
 type NewRecipe = Omit<Recipe, 'id'>
 
 export const useRecipeStore = defineStore('recipe', () => {
+  // variables
+
   const recipes = ref<Recipe[]>([])
+  const favorites = ref<string[]>([])
+
+  // functions
 
   const addRecipe = (recipe: NewRecipe) => {
     const newRecipe = {
@@ -38,5 +43,27 @@ export const useRecipeStore = defineStore('recipe', () => {
       recipes.value[index] = updatedRecipe
     }
   }
-  return { recipes, addRecipe, getRecipeById, filteredRecipes, editRecipe }
+
+  // favorities
+
+  const toggleFavorite = (id: string) => {
+    if (favorites.value.includes(id)) {
+      favorites.value = favorites.value.filter((favId) => favId !== id)
+    } else {
+      favorites.value.push(id)
+    }
+  }
+
+  const isFavorite = (id: string) => favorites.value.includes(id)
+
+  return {
+    recipes,
+    favorites,
+    addRecipe,
+    getRecipeById,
+    filteredRecipes,
+    editRecipe,
+    toggleFavorite,
+    isFavorite,
+  }
 })

@@ -7,7 +7,7 @@
     <div>
       <textarea v-model="description" placeholder="Recipe description" required></textarea>
     </div>
-    <button type="submit">Add</button>
+    <button type="submit">Save</button>
   </form>
 </template>
 
