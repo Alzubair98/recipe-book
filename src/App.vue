@@ -1,23 +1,23 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
   <header>
     <nav>
-      <ul>
+      <ul class="flex gap-4 p-8 bg-orange-200 text-orange-800 text-lg">
         <li>
-          <RouterLink :to="{ name: 'home' }"> Home </RouterLink>
+          <RouterLink class="hover:underline" :to="{ name: 'home' }"> Home </RouterLink>
         </li>
         <li>
-          <RouterLink :to="{ name: 'favorites' }">Favorites</RouterLink>
+          <RouterLink class="hover:underline" :to="{ name: 'favorites' }">Favorites</RouterLink>
         </li>
         <li>
-          <RouterLink :to="{ name: 'add-recipe' }">Add Recipe</RouterLink>
+          <RouterLink class="hover:underline" :to="{ name: 'add-recipe' }">Add Recipe</RouterLink>
         </li>
       </ul>
     </nav>
   </header>
 
-  <RouterView />
+  <main class="bg-orange-100 h-screen p-4"><RouterView /></main>
 </template>
+
+<script setup lang="ts">
+import { RouterLink, RouterView } from 'vue-router'
+</script>
