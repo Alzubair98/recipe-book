@@ -1,13 +1,12 @@
 <template>
   <main>
     <h1>Home</h1>
-    <nav>
+    <nav v-if="recipeStore.recipes.length > 0">
       <ul>
-        <li>
-          <router-link :to="{ name: 'recipe', params: { id: 1 } }">Recipe 1</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'recipe', params: { id: 2 } }">Recipe 2</router-link>
+        <li v-for="recipe in recipeStore.recipes" :key="recipe.id">
+          <router-link :to="{ name: 'recipe', params: { id: recipe.id } }">{{
+            recipe.name
+          }}</router-link>
         </li>
       </ul>
     </nav>
