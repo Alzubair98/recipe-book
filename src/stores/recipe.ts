@@ -29,5 +29,14 @@ export const useRecipeStore = defineStore('recipe', () => {
       recipe.name.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase()),
     )
 
-  return { recipes, addRecipe, getRecipeById, filteredRecipes }
+  // edit index
+
+  const editRecipe = (updatedRecipe: Recipe) => {
+    const index = recipes.value.findIndex((recipe) => recipe.id == updatedRecipe.id)
+
+    if (index !== -1) {
+      recipes.value[index] = updatedRecipe
+    }
+  }
+  return { recipes, addRecipe, getRecipeById, filteredRecipes, editRecipe }
 })
